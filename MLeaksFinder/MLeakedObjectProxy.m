@@ -16,7 +16,7 @@
 #import "NSObject+MemoryLeak.h"
 #import <objc/runtime.h>
 #import <UIKit/UIKit.h>
-
+#import "MLeakFinderToggle.h"
 #if _INTERNAL_MLF_RC_ENABLED
 #import <FBRetainCycleDetector/FBRetainCycleDetector.h>
 #endif
@@ -61,15 +61,19 @@ static NSMutableSet *leakedObjectPtrs;
     
     [leakedObjectPtrs addObject:proxy.objectPtr];
     
-#if _INTERNAL_MLF_RC_ENABLED
-    [MLeaksMessenger alertWithTitle:@"Memory Leak"
-                            message:[NSString stringWithFormat:@"%@", proxy.viewStack]
-                           delegate:proxy
-              additionalButtonTitle:@"Retain Cycle"];
-#else
+//#if _INTERNAL_MLF_RC_ENABLED
+//    [MLeaksMessenger alertWithTitle:@"Memory Leak"
+//                            message:[NSString stringWithFormat:@"%@", proxy.viewStack]
+//                           delegate:proxy
+//              additionalButtonTitle:@"Retain Cycle"];
+    if (isEnableMemoryLeakFinder == nil){
+        isEnableMemoryLeakFinder = 0;
+    }
+    if (isEnableMemoryLeakFinder == 1){
     [MLeaksMessenger alertWithTitle:@"Memory Leak"
                             message:[NSString stringWithFormat:@"%@", proxy.viewStack]];
-#endif
+   }
+//#endif
 }
 
 - (void)dealloc {

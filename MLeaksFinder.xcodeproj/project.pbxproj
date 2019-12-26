@@ -40,7 +40,6 @@
 /* Begin PBXFileReference section */
 		5E297F00748C1FFA737EEFB0 /* Pods-MLeaksFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MLeaksFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-MLeaksFinder/Pods-MLeaksFinder.release.xcconfig"; sourceTree = "<group>"; };
 		6C69FD6BA6E3CCAC5168D790 /* libPods-MLeaksFinder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MLeaksFinder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8539A11D23B0C88D00B55003 /* MLeakFinderToggle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLeakFinderToggle.h; sourceTree = "<group>"; };
 		90EF182415984ED6E908B442 /* Pods-MLeaksFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MLeaksFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MLeaksFinder/Pods-MLeaksFinder.debug.xcconfig"; sourceTree = "<group>"; };
 		B32AAB301D767E59001485FF /* UITouch+MemoryLeak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITouch+MemoryLeak.h"; sourceTree = "<group>"; };
 		B32AAB311D767E59001485FF /* UITouch+MemoryLeak.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITouch+MemoryLeak.m"; sourceTree = "<group>"; };
@@ -124,7 +123,6 @@
 				B3ADE17F1C1BD4B200AA4F63 /* UIViewController+MemoryLeak.m */,
 				B32AAB301D767E59001485FF /* UITouch+MemoryLeak.h */,
 				B32AAB311D767E59001485FF /* UITouch+MemoryLeak.m */,
-				8539A11D23B0C88D00B55003 /* MLeakFinderToggle.h */,
 			);
 			path = MLeaksFinder;
 			sourceTree = "<group>";

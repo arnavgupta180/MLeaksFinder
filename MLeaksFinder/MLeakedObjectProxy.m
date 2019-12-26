@@ -16,7 +16,6 @@
 #import "NSObject+MemoryLeak.h"
 #import <objc/runtime.h>
 #import <UIKit/UIKit.h>
-#import "MLeakFinderToggle.h"
 #if _INTERNAL_MLF_RC_ENABLED
 #import <FBRetainCycleDetector/FBRetainCycleDetector.h>
 #endif
@@ -51,29 +50,19 @@ static NSMutableSet *leakedObjectPtrs;
 
 + (void)addLeakedObject:(id)object {
     NSAssert([NSThread isMainThread], @"Must be in main thread.");
-    
     MLeakedObjectProxy *proxy = [[MLeakedObjectProxy alloc] init];
     proxy.object = object;
     proxy.objectPtr = @((uintptr_t)object);
     proxy.viewStack = [object viewStack];
     static const void *const kLeakedObjectProxyKey = &kLeakedObjectProxyKey;
     objc_setAssociatedObject(object, kLeakedObjectProxyKey, proxy, OBJC_ASSOCIATION_RETAIN);
-    
     [leakedObjectPtrs addObject:proxy.objectPtr];
-    
-//#if _INTERNAL_MLF_RC_ENABLED
-//    [MLeaksMessenger alertWithTitle:@"Memory Leak"
-//                            message:[NSString stringWithFormat:@"%@", proxy.viewStack]
-//                           delegate:proxy
-//              additionalButtonTitle:@"Retain Cycle"];
-    if (isEnableMemoryLeakFinder == nil){
-        isEnableMemoryLeakFinder = 0;
+    NSData *archivedValue = [[NSUserDefaults standardUserDefaults] objectForKey:@"FBTweak:MemoryLeakDetector--isEnableMemoryLeakFinder"];
+    NSString *currentValue = [[NSKeyedUnarchiver unarchiveObjectWithData:archivedValue] stringValue];
+    if ([currentValue isEqualToString: @"1"]){
+        [MLeaksMessenger alertWithTitle:@"Memory Leak"
+                                message:[NSString stringWithFormat:@"%@", proxy.viewStack]];
     }
-    if (isEnableMemoryLeakFinder == 1){
-    [MLeaksMessenger alertWithTitle:@"Memory Leak"
-                            message:[NSString stringWithFormat:@"%@", proxy.viewStack]];
-   }
-//#endif
 }
 
 - (void)dealloc {

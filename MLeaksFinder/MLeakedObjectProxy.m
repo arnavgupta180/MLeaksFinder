@@ -61,12 +61,14 @@ static NSMutableSet *leakedObjectPtrs;
     NSString *currentValue = [[NSKeyedUnarchiver unarchiveObjectWithData:archivedValue] stringValue];
     NSString *string = [NSString stringWithFormat:@"%@\n",object];
     NSString *strFileName = [[[string componentsSeparatedByString:@":"] objectAtIndex:0] substringFromIndex:1];
-    NSString *str = [NSString stringWithFormat:@"%@\n",strFileName];
+    NSMutableString *str = [proxy.viewStack componentsJoinedByString:@"."];
+    str = [NSString stringWithFormat:@"%@\n",str];
+   // NSString *str = [NSString stringWithFormat:@"%@\n",strFileName];
     NSArray *paths = NSSearchPathForDirectoriesInDomains
     (NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     //file name to write the data to using the documents directory:
-    NSString *fileName = [NSString stringWithFormat:@"%@/leaks.txt",
+    NSString *fileName = [NSString stringWithFormat:@"%@/leak.txt",
                           documentsDirectory];
     // check for file exist
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -101,7 +103,7 @@ static NSMutableSet *leakedObjectPtrs;
         // clean up
         [fileHandle closeFile];
     }
-
+   // NSLog(@"%@",proxy.viewStack);
     if ([currentValue isEqualToString: @"1"]){
         [MLeaksMessenger alertWithTitle:@"Memory Leak"
                                 message:[NSString stringWithFormat:@"%@", proxy.viewStack]];

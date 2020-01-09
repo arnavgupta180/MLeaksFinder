@@ -57,8 +57,6 @@ static NSMutableSet *leakedObjectPtrs;
     static const void *const kLeakedObjectProxyKey = &kLeakedObjectProxyKey;
     objc_setAssociatedObject(object, kLeakedObjectProxyKey, proxy, OBJC_ASSOCIATION_RETAIN);
     [leakedObjectPtrs addObject:proxy.objectPtr];
-    NSData *archivedValue = [[NSUserDefaults standardUserDefaults] objectForKey:@"FBTweak:MemoryLeakDetector--isEnableMemoryLeakFinder"];
-    NSString *currentValue = [[NSKeyedUnarchiver unarchiveObjectWithData:archivedValue] stringValue];
     NSString *string = [NSString stringWithFormat:@"%@\n",object];
     NSString *strFileName = [[[string componentsSeparatedByString:@":"] objectAtIndex:0] substringFromIndex:1];
     NSMutableString *str = [proxy.viewStack componentsJoinedByString:@"."];
@@ -103,11 +101,8 @@ static NSMutableSet *leakedObjectPtrs;
         // clean up
         [fileHandle closeFile];
     }
-   // NSLog(@"%@",proxy.viewStack);
-    if ([currentValue isEqualToString: @"1"]){
         [MLeaksMessenger alertWithTitle:@"Memory Leak"
                                 message:[NSString stringWithFormat:@"%@", proxy.viewStack]];
-    }
 }
 
 - (void)dealloc {

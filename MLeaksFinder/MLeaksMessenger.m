@@ -24,6 +24,9 @@ static __weak UIAlertView *alertView;
                message:(NSString *)message
               delegate:(id<UIAlertViewDelegate>)delegate
  additionalButtonTitle:(NSString *)additionalButtonTitle {
+    NSData *archivedValue = [[NSUserDefaults standardUserDefaults] objectForKey:@"FBTweak:MemoryLeakDetector--isEnableMemoryLeakFinder"];
+          NSString *currentValue = [[NSKeyedUnarchiver unarchiveObjectWithData:archivedValue] stringValue];
+     if ([currentValue isEqualToString: @"1"]){
     [alertView dismissWithClickedButtonIndex:0 animated:NO];
     UIAlertView *alertViewTemp = [[UIAlertView alloc] initWithTitle:title
                                                             message:message
@@ -32,7 +35,7 @@ static __weak UIAlertView *alertView;
                                                   otherButtonTitles:additionalButtonTitle, nil];
     [alertViewTemp show];
     alertView = alertViewTemp;
-    
+     }
     NSLog(@"%@: %@", title, message);
 }
 

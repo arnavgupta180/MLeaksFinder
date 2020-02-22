@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		858CC2DE240165AB008D7B6A /* JIraAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 858CC2DA240165AA008D7B6A /* JIraAPI.m */; };
+		858CC2DF240165AB008D7B6A /* JiraIssueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 858CC2DC240165AB008D7B6A /* JiraIssueModel.m */; };
 		B32AAB321D767E59001485FF /* UITouch+MemoryLeak.m in Sources */ = {isa = PBXBuildFile; fileRef = B32AAB311D767E59001485FF /* UITouch+MemoryLeak.m */; };
 		B3667E4E1D38ADF6002B55DE /* MLeakedObjectProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = B3667E4D1D38ADF6002B55DE /* MLeakedObjectProxy.m */; };
 		B3667E721D3BA78E002B55DE /* MLeaksMessenger.m in Sources */ = {isa = PBXBuildFile; fileRef = B3667E711D3BA78E002B55DE /* MLeaksMessenger.m */; };
@@ -40,6 +42,11 @@
 /* Begin PBXFileReference section */
 		5E297F00748C1FFA737EEFB0 /* Pods-MLeaksFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MLeaksFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-MLeaksFinder/Pods-MLeaksFinder.release.xcconfig"; sourceTree = "<group>"; };
 		6C69FD6BA6E3CCAC5168D790 /* libPods-MLeaksFinder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MLeaksFinder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		858CC28F23FF7C05008D7B6A /* MLeaksFinder-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MLeaksFinder-Bridging-Header.h"; sourceTree = "<group>"; };
+		858CC2DA240165AA008D7B6A /* JIraAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JIraAPI.m; sourceTree = "<group>"; };
+		858CC2DB240165AB008D7B6A /* JiraIssueModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JiraIssueModel.h; sourceTree = "<group>"; };
+		858CC2DC240165AB008D7B6A /* JiraIssueModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JiraIssueModel.m; sourceTree = "<group>"; };
+		858CC2DD240165AB008D7B6A /* JIraAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JIraAPI.h; sourceTree = "<group>"; };
 		90EF182415984ED6E908B442 /* Pods-MLeaksFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MLeaksFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MLeaksFinder/Pods-MLeaksFinder.debug.xcconfig"; sourceTree = "<group>"; };
 		B32AAB301D767E59001485FF /* UITouch+MemoryLeak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITouch+MemoryLeak.h"; sourceTree = "<group>"; };
 		B32AAB311D767E59001485FF /* UITouch+MemoryLeak.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITouch+MemoryLeak.m"; sourceTree = "<group>"; };
@@ -100,6 +107,10 @@
 		B3ADE16E1C1BD1D600AA4F63 /* MLeaksFinder */ = {
 			isa = PBXGroup;
 			children = (
+				858CC2DD240165AB008D7B6A /* JIraAPI.h */,
+				858CC2DA240165AA008D7B6A /* JIraAPI.m */,
+				858CC2DB240165AB008D7B6A /* JiraIssueModel.h */,
+				858CC2DC240165AB008D7B6A /* JiraIssueModel.m */,
 				B3667E4C1D38ADF6002B55DE /* MLeakedObjectProxy.h */,
 				B3667E4D1D38ADF6002B55DE /* MLeakedObjectProxy.m */,
 				B3ADE16F1C1BD1D600AA4F63 /* MLeaksFinder.h */,
@@ -123,6 +134,7 @@
 				B3ADE17F1C1BD4B200AA4F63 /* UIViewController+MemoryLeak.m */,
 				B32AAB301D767E59001485FF /* UITouch+MemoryLeak.h */,
 				B32AAB311D767E59001485FF /* UITouch+MemoryLeak.m */,
+				858CC28F23FF7C05008D7B6A /* MLeaksFinder-Bridging-Header.h */,
 			);
 			path = MLeaksFinder;
 			sourceTree = "<group>";
@@ -177,6 +189,7 @@
 				TargetAttributes = {
 					B3ADE16B1C1BD1D600AA4F63 = {
 						CreatedOnToolsVersion = 7.1.1;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -240,10 +253,12 @@
 				B3ADE17A1C1BD29600AA4F63 /* UIView+MemoryLeak.m in Sources */,
 				B3ADE1861C1BD5CC00AA4F63 /* UIPageViewController+MemoryLeak.m in Sources */,
 				B3667E4E1D38ADF6002B55DE /* MLeakedObjectProxy.m in Sources */,
+				858CC2DF240165AB008D7B6A /* JiraIssueModel.m in Sources */,
 				B3667E721D3BA78E002B55DE /* MLeaksMessenger.m in Sources */,
 				B3ADE17D1C1BD2F000AA4F63 /* NSObject+MemoryLeak.m in Sources */,
 				B3ADE18C1C1BD74700AA4F63 /* UISplitViewController+MemoryLeak.m in Sources */,
 				B3ADE1801C1BD4B200AA4F63 /* UIViewController+MemoryLeak.m in Sources */,
+				858CC2DE240165AB008D7B6A /* JIraAPI.m in Sources */,
 				B3ADE1831C1BD54B00AA4F63 /* UINavigationController+MemoryLeak.m in Sources */,
 				B32AAB321D767E59001485FF /* UITouch+MemoryLeak.m in Sources */,
 				B3ADE1891C1BD6F000AA4F63 /* UITabBarController+MemoryLeak.m in Sources */,
@@ -293,6 +308,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h MLeaksFinder-Swift.h";
 			};
 			name = Debug;
 		};
@@ -329,6 +345,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h MLeaksFinder-Swift.h";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -337,9 +354,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 90EF182415984ED6E908B442 /* Pods-MLeaksFinder.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "MLeaksFinder/MLeaksFinder-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -347,9 +369,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5E297F00748C1FFA737EEFB0 /* Pods-MLeaksFinder.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "MLeaksFinder/MLeaksFinder-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

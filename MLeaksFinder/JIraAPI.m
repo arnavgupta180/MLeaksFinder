@@ -43,10 +43,10 @@
 }
 
 -(void)createJiraTicket:(NSString *)summary :(NSString *)squadName {
-    NSDictionary *headers = @{ @"authorization": @"Basic YXJuYXZndXB0YTE4MEBnbWFpbC5jb206YjRVWnhFUndqdTJUS25UNnlMcjhEM0RB",
+    NSDictionary *headers = @{ @"authorization": @"Basic YXJuYXYuZ3VwdGFAdG9rb3BlZGlhLmNvbTpEbWwzYzc5UTlTTE4yTGlIUzNDOTEyMzI=",
                                @"content-type": @"application/json",
                                @"cache-control": @"no-cache",
-                               @"postman-token": @"26993417-6fa7-5c2c-7afd-c1ccf2940152" };
+                               @"postman-token": @"8aec318c-879e-2b93-93fe-ec1189d3a395" };
     
     NSString *desc = @"“Memory that was allocated at some point, but was never released and is no longer referenced by your app.This might lead to crashes.";
     
@@ -54,7 +54,7 @@
     
     NSData *postData = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://arnavgupta.atlassian.net/rest/api/2/issue/"]
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://tokopedia.atlassian.net/rest/api/2/issue/"]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:10.0];
     [request setHTTPMethod:@"POST"];
@@ -75,17 +75,17 @@
 }
 
 -(void)searchJiraTicket:(NSString *)summary completionHandler:(void (^)(bool isIssue))completionHandler {
-    
-    NSDictionary *headers = @{ @"authorization": @"Basic YXJuYXZndXB0YTE4MEBnbWFpbC5jb206YjRVWnhFUndqdTJUS25UNnlMcjhEM0RB",
+
+    NSDictionary *headers = @{ @"authorization": @"Basic YXJuYXYuZ3VwdGFAdG9rb3BlZGlhLmNvbTpEbWwzYzc5UTlTTE4yTGlIUzNDOTEyMzI=",
                                @"content-type": @"application/json",
                                @"cache-control": @"no-cache",
-                               @"postman-token": @"cef31d82-7680-df4b-94f1-395d3fdf51ba" };
+                               @"postman-token": @"10b68e4b-b6d1-2286-3168-585e640d3f1a" };
     
-    NSString * str = [NSString stringWithFormat:@"project = MEM and summary ~ \"%@\"",summary];
+    NSString * str = [NSString stringWithFormat:@"project = iOS and summary ~ \"%@\"",summary];
     NSDictionary *parameters = @{ @"jql": str };
     NSData *postData = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString: @"https://arnavgupta.atlassian.net/rest/api/2/search"]
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString: @"https://tokopedia.atlassian.net/rest/api/2/search"]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:10.0];
     [request setHTTPMethod:@"POST"];

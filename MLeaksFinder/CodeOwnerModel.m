@@ -15,6 +15,8 @@
     NSData *decodedData = [[NSData alloc] initWithBase64EncodedString:json[@"content"] options:NSDataBase64DecodingIgnoreUnknownCharacters];
 
     NSString *decodedString = [[NSString alloc] initWithData:decodedData encoding:NSASCIIStringEncoding];
+    decodedString = [decodedString stringByReplacingOccurrencesOfString:@"# joker - features"
+       withString:@"iOS - Joker"];
    decodedString = [decodedString stringByReplacingOccurrencesOfString:@"# core"
    withString:@"iOS - Platform"];
     decodedString = [decodedString stringByReplacingOccurrencesOfString:@"# whitewalkers - features" withString:@"iOS - Whitewalker"];

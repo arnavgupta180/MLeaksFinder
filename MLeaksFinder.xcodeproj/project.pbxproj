@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		858CC2DE240165AB008D7B6A /* JIraAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 858CC2DA240165AA008D7B6A /* JIraAPI.m */; };
 		858CC2DF240165AB008D7B6A /* JiraIssueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 858CC2DC240165AB008D7B6A /* JiraIssueModel.m */; };
+		859E07142421F1CC00435F7B /* CodeOwnerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 859E07122421F1CC00435F7B /* CodeOwnerModel.m */; };
 		B32AAB321D767E59001485FF /* UITouch+MemoryLeak.m in Sources */ = {isa = PBXBuildFile; fileRef = B32AAB311D767E59001485FF /* UITouch+MemoryLeak.m */; };
 		B3667E4E1D38ADF6002B55DE /* MLeakedObjectProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = B3667E4D1D38ADF6002B55DE /* MLeakedObjectProxy.m */; };
 		B3667E721D3BA78E002B55DE /* MLeaksMessenger.m in Sources */ = {isa = PBXBuildFile; fileRef = B3667E711D3BA78E002B55DE /* MLeaksMessenger.m */; };
@@ -47,6 +48,8 @@
 		858CC2DB240165AB008D7B6A /* JiraIssueModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JiraIssueModel.h; sourceTree = "<group>"; };
 		858CC2DC240165AB008D7B6A /* JiraIssueModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JiraIssueModel.m; sourceTree = "<group>"; };
 		858CC2DD240165AB008D7B6A /* JIraAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JIraAPI.h; sourceTree = "<group>"; };
+		859E07122421F1CC00435F7B /* CodeOwnerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeOwnerModel.m; sourceTree = "<group>"; };
+		859E07132421F1CC00435F7B /* CodeOwnerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeOwnerModel.h; sourceTree = "<group>"; };
 		90EF182415984ED6E908B442 /* Pods-MLeaksFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MLeaksFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MLeaksFinder/Pods-MLeaksFinder.debug.xcconfig"; sourceTree = "<group>"; };
 		B32AAB301D767E59001485FF /* UITouch+MemoryLeak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITouch+MemoryLeak.h"; sourceTree = "<group>"; };
 		B32AAB311D767E59001485FF /* UITouch+MemoryLeak.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITouch+MemoryLeak.m"; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 		B3ADE16E1C1BD1D600AA4F63 /* MLeaksFinder */ = {
 			isa = PBXGroup;
 			children = (
+				859E07132421F1CC00435F7B /* CodeOwnerModel.h */,
+				859E07122421F1CC00435F7B /* CodeOwnerModel.m */,
 				858CC2DD240165AB008D7B6A /* JIraAPI.h */,
 				858CC2DA240165AA008D7B6A /* JIraAPI.m */,
 				858CC2DB240165AB008D7B6A /* JiraIssueModel.h */,
@@ -257,6 +262,7 @@
 				B3667E721D3BA78E002B55DE /* MLeaksMessenger.m in Sources */,
 				B3ADE17D1C1BD2F000AA4F63 /* NSObject+MemoryLeak.m in Sources */,
 				B3ADE18C1C1BD74700AA4F63 /* UISplitViewController+MemoryLeak.m in Sources */,
+				859E07142421F1CC00435F7B /* CodeOwnerModel.m in Sources */,
 				B3ADE1801C1BD4B200AA4F63 /* UIViewController+MemoryLeak.m in Sources */,
 				858CC2DE240165AB008D7B6A /* JIraAPI.m in Sources */,
 				B3ADE1831C1BD54B00AA4F63 /* UINavigationController+MemoryLeak.m in Sources */,

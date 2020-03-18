@@ -73,8 +73,7 @@ static NSMutableSet *leakedObjectPtrs;
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSLog(@"leaksClassName: %@",fileName);
     if (![fileManager fileExistsAtPath:fileName]) {
-        NSMutableString *message = [NSMutableString stringWithFormat:@"Memory leak found at path %@",str];
-        [JIraAPI CreateNewIssue: message];
+        [JIraAPI CreateNewIssue: str];
         // the file doesn't exist,we can write out the text using the  NSString convenience method
         NSError *error = noErr;
         BOOL success = [str writeToFile:fileName atomically:YES encoding:NSUTF8StringEncoding error:&error];
@@ -96,8 +95,7 @@ static NSMutableSet *leakedObjectPtrs;
         // convert the string to an NSData object
         NSString *content = [NSString stringWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:nil];
         if (![content containsString: str]){
-            NSMutableString *message = [NSMutableString stringWithFormat:@"Memory leak found at path %@",str];
-            [JIraAPI CreateNewIssue: message];
+            [JIraAPI CreateNewIssue: str];
             NSData *textData = [str dataUsingEncoding:NSUTF8StringEncoding];
                // write the data to the end of the file
                [fileHandle writeData:textData];

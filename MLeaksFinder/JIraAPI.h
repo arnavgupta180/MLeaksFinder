@@ -12,9 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface JIraAPI : NSObject
 +(void)CreateNewIssue:(NSString *)summary;
--(void)createJiraTicket:(NSString *)summary;
+-(void)createJiraTicket:(NSString *)summary :(NSString *)squadName;
 -(void)searchJiraTicket:(NSString *)summary completionHandler:(void (^)(bool isIssue))completionHandler;
-
+-(void)fetchCodeOwners:(NSString *)summary completionHandler: (void (^)(NSArray * array))completionHandler;
 @end
 
 NS_ASSUME_NONNULL_END
